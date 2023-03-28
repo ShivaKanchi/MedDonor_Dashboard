@@ -522,6 +522,22 @@ export const links = [
     title: 'Pages',
     links: [
       {
+        name: 'medicines',
+        icon: <AiOutlineShoppingCart />,
+      },
+      {
+        name: 'donors',
+        icon: <IoMdContacts />,
+      },
+      {
+        name: 'medicals',
+        icon: <AiOutlineShoppingCart />,
+      },
+      {
+        name: 'events',
+        icon: <IoMdContacts />,
+      },
+      {
         name: 'orders',
         icon: <AiOutlineShoppingCart />,
       },
