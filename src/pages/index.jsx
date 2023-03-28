@@ -1,11 +1,9 @@
 export { default as Home } from './Home';
 
+export { default as Medicines } from './Medicines'
 export { default as Donors } from './Donors'
 export { default as Medicals } from './Medicals'
-export { default as Medicines } from './Events'
 export { default as Events } from './Events'
-
-
 
 export { default as Customers } from './Customers';
 export { default as Orders } from './Orders';
