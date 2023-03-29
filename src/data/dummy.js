@@ -1,6 +1,7 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock, AiOutlineMedicineBox, AiOutlineShop } from 'react-icons/ai';
+import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock, AiOutlineMedicineBox, AiOutlineShop, AiOutlineAudit } from 'react-icons/ai';
 import { FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart, FiHome } from 'react-icons/fi';
+
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
 import { BiColorFill } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
@@ -535,7 +536,7 @@ export const links = [
       },
       {
         name: 'events',
-        icon: <IoMdContacts />,
+        icon: <AiOutlineAudit />,
       },
       {
         name: 'orders',
