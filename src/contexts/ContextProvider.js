@@ -9,7 +9,7 @@ const intialState = {
     notification: false,
 }
 
-export const ContextProvider = ({ children }) => {
+export const ContextProvider = ({ children, store }) => {
 
     const [activeMenu, setActiveMenu] = useState(true);
     const [isClicked, setIsClicked] = useState(intialState);
@@ -45,7 +45,9 @@ export const ContextProvider = ({ children }) => {
                 currentColor, currentMode,
                 setColor, setMode,
                 themeSettings, setThemeSettings
-            }}>
+            }}
+            store={store}
+        >
             {children}
         </StateContext.Provider>
     )
