@@ -15,6 +15,20 @@ export const getUser = (_id) => async (dispatch) => {
     }
 }
 
+export const getAllUser = () => async (dispatch) => {
+    try {
+        const Users = await axios({
+            method: "GET",
+            url: `${process.env.REACT_APP_CLIENT_URL}/user/all)`
+        })
+        return dispatch({ type: GET_USER, payload: Users.data });
+
+    }
+    catch (error) {
+        return dispatch({ type: "ERROR", payload: error })
+    }
+}
+
 export const getMySelf = () => async (dispatch) => {
     try {
         const User = await axios({

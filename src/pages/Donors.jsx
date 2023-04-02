@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { GridComponent, ColumnsDirective, ColumnDirective, Page, Selection, Inject, Edit, Toolbar, Sort, Filter } from '@syncfusion/ej2-react-grids'
 import { customersData, customersGrid } from '../data/dummy'
 import { Header } from '../components'
 
 import { useDispatch, useSelector } from "react-redux";
-import { getMedicines } from "../redux/Reducers/Medicine/medicine.action";
+import { getAllUser } from "../redux/Reducers/User/user.action";
 
 
 
@@ -99,11 +99,24 @@ export const donorGrid = [
 
 const Donors = () => {
 
+    const [donors, setDonors] = useState([])
+    const dispatch = useDispatch()
+    const donorsdata = useSelector((state) => state.medicine.medicinelist)
+    useEffect(() => {
+        dispatch(getAllUser())
+    }, [])
+    useEffect(() => {
+        if (donorsdata) {
+            setDonors(donorsdata);
+        }
+    }, [donorsdata]);
+
+
     return (
         <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
             <Header category="Page" title="Donors" />
             <GridComponent
-                dataSource={customersData}
+                dataSource={donors}
                 allowPaging
                 allowSorting
                 toolbar={['Delete']}
