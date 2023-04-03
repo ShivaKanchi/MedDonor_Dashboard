@@ -5,7 +5,7 @@ export const getUser = (_id) => async (dispatch) => {
     try {
         const User = await axios({
             method: "GET",
-            url: `${process.env.REACT_APP_CLIENT_URL}/user/${_id})`
+            url: `${process.env.REACT_APP_CLIENT_URL}/user/one/${_id})`
         })
         return dispatch({ type: GET_USER, payload: User.data });
 
@@ -19,7 +19,7 @@ export const getAllUser = () => async (dispatch) => {
     try {
         const Users = await axios({
             method: "GET",
-            url: `${process.env.REACT_APP_CLIENT_URL}/user/all)`
+            url: `${process.env.REACT_APP_CLIENT_URL}/user/allusers)`
         })
         return dispatch({ type: GET_USER, payload: Users.data });
 
