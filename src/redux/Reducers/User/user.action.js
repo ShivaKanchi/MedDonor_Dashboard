@@ -19,7 +19,7 @@ export const getAllUser = () => async (dispatch) => {
     try {
         const Users = await axios({
             method: "GET",
-            url: `${process.env.REACT_APP_CLIENT_URL}/user/allusers)`
+            url: `${process.env.REACT_APP_CLIENT_URL}/user/allusers`
         })
         return dispatch({ type: GET_USER, payload: Users.data });
 
