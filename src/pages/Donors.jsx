@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { GridComponent, ColumnsDirective, ColumnDirective, Page, Search, Selection, Inject, Edit, Toolbar, Sort, Filter } from '@syncfusion/ej2-react-grids'
-import { customersData, customersGrid } from '../data/dummy'
 import { Header } from '../components'
 
 import { useDispatch, useSelector } from "react-redux";
@@ -11,15 +10,15 @@ import { getAllUser } from "../redux/Reducers/User/user.action";
 const donorGridName = (props) => (
     <div className="image flex gap-4">
         <>
-            <img
-                className="rounded-full w-10 h-10"
-                src={props.profilepic}
-                alt="donor"
-            />
-        </>
-        <>
-            <p className='text-sm'>{props.firstname}</p>
-            <p className='text-sm'>{props.lastname}</p>
+            <>
+                <img
+                    className="rounded-full w-10 h-10"
+                    src={props.profilepic}
+                    alt="donor"
+                />
+            </>
+            <p className='text-sm'>{props.firstname}-{props.lastname}</p>
+
         </>
     </div>
 );
@@ -28,7 +27,7 @@ const donorGridPhone = (props) => (
     <div className="image flex gap-4">
         <>
             <p className='text-sm'>{props.phone}</p>
-            <p className='text-sm'>{props.phone}</p>
+            {/* <p className='text-sm'>{props.phone}</p> */}
         </>
     </div>
 );
@@ -43,20 +42,6 @@ const donorGridDonations = (props) => (
     </div>
 );
 
-
-// const donorGridImage = (props) => (
-//     <div className="image flex gap-2">
-//         <div>
-//             <p className='text-sm'>{props.donorname}</p>
-//             <p className='text-sm'>{props.donor}</p>
-//         </div>
-//         {/* <img
-//             className="rounded-full w-10 h-10"
-//             src={props.donorimage}
-//             alt="donor"
-//         /> */}
-//     </div>
-// );
 
 // "_id": "63fb6fcea91936bad7c05e9a",
 // "firstname": "SHIVA",
@@ -109,7 +94,6 @@ export const donorGrid = [
         width: '200',
         textAlign: 'Center'
     },
-
     {
         field: 'comments',
         headerText: 'Comments',
@@ -129,10 +113,12 @@ const Donors = () => {
 
     const [donors, setDonors] = useState([])
     const dispatch = useDispatch()
-    const donorsdata = useSelector((state) => state.medicine.medicinelist)
+    const donorsdata = useSelector((state) => state.user.users)
+
     useEffect(() => {
         dispatch(getAllUser())
     }, [])
+
     useEffect(() => {
         if (donorsdata) {
             console.log(donorsdata)

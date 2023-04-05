@@ -1,4 +1,4 @@
-import { GET_USER, SELF, CLEAR_USER, UPDATE_USER } from "./user.type";
+import { GET_USER, SELF, CLEAR_USER, UPDATE_USER, GET_ALL_USER } from "./user.type";
 import axios from "axios";
 
 export const getUser = (_id) => async (dispatch) => {
@@ -21,7 +21,8 @@ export const getAllUser = () => async (dispatch) => {
             method: "GET",
             url: `${process.env.REACT_APP_CLIENT_URL}/user/allusers`
         })
-        return dispatch({ type: GET_USER, payload: Users.data });
+        // console.log(Users.data.data)
+        return dispatch({ type: GET_ALL_USER, payload: Users.data.data });
 
     }
     catch (error) {
