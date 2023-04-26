@@ -35,8 +35,7 @@ const App = () => {
                                 <Sidebar />
                             </div>)
                     }
-                    <div className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full 
-                    ${activeMenu ? 'md:ml-72' : 'flex-2'} `}
+                    <div className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full  ${activeMenu ? 'md:ml-72' : 'flex-2'} `}
                     >
                         <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                             <Navbar />
@@ -46,17 +45,14 @@ const App = () => {
                             {themeSettings && <ThemeSettings />}
                             <Routes>
                                 {/* Dashboard */}
-                                <Route path="/" element={<Home />} />
-                                <Route path="/home" element={<Home />} />
+                                <Route path="/" element={<Medicines />} />
+                                <Route path="/home" element={<Medicines />} />
+                                {/* <Home /> */}
                                 {/* Pages */}
                                 <Route path="/medicines" element={<Medicines />} />
                                 <Route path="/donors" element={<Donors />} />
                                 <Route path="/medicals" element={<Medicals />} />
                                 <Route path="/events" element={<Events />} />
-
-                                <Route path="/orders" element={<Orders />} />
-                                <Route path="/employees" element={<Employees />} />
-                                <Route path="/customers" element={<Customers />} />
                                 {/* Apps */}
                                 < Route path="/kanban" element={<Kanban />} />
                                 <Route path="/editor" element={<Editor />} />
